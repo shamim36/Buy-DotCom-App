@@ -13,6 +13,7 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   bool inLogin = false;
   String currentCountryCode = '+880';
+  TextEditingController mobileController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -163,6 +164,7 @@ class _AuthScreenState extends State<AuthScreen> {
                             ),
                             CommonFunctions.blankSpace(height * 0.01, 0),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 InkWell(
                                   onTap: () {
@@ -171,23 +173,55 @@ class _AuthScreenState extends State<AuthScreen> {
                                         onSelect: (val) {
                                           currentCountryCode =
                                               '+${val.phoneCode}';
+                                          setState(() {});
                                         });
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
                                     height: height * 0.06,
-                                    width: width * 0.23,
+                                    width: width * 0.2,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: grey,
                                       ),
                                       color: greyShade2,
-                                      borderRadius: BorderRadius.circular(5),
+                                      borderRadius: BorderRadius.circular(
+                                        5,
+                                      ),
                                     ),
                                     child: Text(
                                       currentCountryCode,
                                       style: textTheme.displaySmall!.copyWith(
                                           fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height * 0.06,
+                                  width: width * 0.62,
+                                  child: TextFormField(
+                                    controller: mobileController,
+                                    cursorColor: black,
+                                    keyboardType: TextInputType.number,
+                                    decoration: InputDecoration(
+                                      hintText: 'Mobile number',
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                        borderSide: BorderSide(color: grey),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                        borderSide: const BorderSide(
+                                            color: secondaryColor),
+                                      ),
+                                      disabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                        borderSide: BorderSide(color: grey),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                        borderSide: BorderSide(color: grey),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -197,6 +231,23 @@ class _AuthScreenState extends State<AuthScreen> {
                         ),
                       ),
                     ),
+                    CommonFunctions.blankSpace(height * 0.02, 0),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(width * 0.88, height * 0.06),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(3)),
+                        ),
+                        backgroundColor: amber,
+                      ),
+                      child: Text(
+                        'Continue',
+                        style: textTheme.displaySmall!
+                            .copyWith(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    CommonFunctions.blankSpace(height * 0.02, 0),
                   ],
                 ),
               ),
