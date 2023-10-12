@@ -1,5 +1,6 @@
 import 'package:buy_dotcom_app/constants/Common_functions.dart';
 import 'package:buy_dotcom_app/utils/colors.dart';
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -10,13 +11,15 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  bool inLogin = true;
+  bool inLogin = false;
+  String currentCountryCode = '+880';
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -67,20 +70,27 @@ class _AuthScreenState extends State<AuthScreen> {
                       padding: EdgeInsets.symmetric(horizontal: width * 0.03),
                       child: Row(
                         children: [
-                          Container(
-                            height: height * 0.03,
-                            width: width * 0.06,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: grey,
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                inLogin = true;
+                              });
+                            },
+                            child: Container(
+                              height: height * 0.03,
+                              width: width * 0.06,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: grey,
+                                ),
+                                color: white,
                               ),
-                              color: white,
-                            ),
-                            child: Icon(
-                              Icons.circle,
-                              size: height * 0.015,
-                              color: !inLogin ? transparent : secondaryColor,
+                              child: Icon(
+                                Icons.circle,
+                                size: height * 0.015,
+                                color: !inLogin ? transparent : secondaryColor,
+                              ),
                             ),
                           ),
                           CommonFunctions.blankSpace(0, width * 0.02),
@@ -106,41 +116,85 @@ class _AuthScreenState extends State<AuthScreen> {
                       width: width,
                       padding: EdgeInsets.symmetric(
                           horizontal: width * 0.03, vertical: height * 0.01),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: height * 0.03,
-                            width: width * 0.06,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: grey,
-                              ),
-                              color: white,
-                            ),
-                            child: Icon(
-                              Icons.circle,
-                              size: height * 0.015,
-                              color: inLogin ? transparent : secondaryColor,
-                            ),
-                          ),
-                          CommonFunctions.blankSpace(0, width * 0.02),
-                          RichText(
-                            text: TextSpan(
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            inLogin = false;
+                          });
+                        },
+                        child: Column(
+                          children: [
+                            Row(
                               children: [
-                                TextSpan(
-                                  text: 'Sign in. ',
-                                  style: textTheme.bodyMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
+                                Container(
+                                  height: height * 0.03,
+                                  width: width * 0.06,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: grey,
+                                    ),
+                                    color: white,
+                                  ),
+                                  child: Icon(
+                                    Icons.circle,
+                                    size: height * 0.015,
+                                    color:
+                                        inLogin ? transparent : secondaryColor,
+                                  ),
                                 ),
-                                TextSpan(
-                                  text: 'Already a customer? ',
-                                  style: textTheme.bodyMedium,
+                                CommonFunctions.blankSpace(0, width * 0.02),
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: 'Sign in. ',
+                                        style: textTheme.bodyMedium!.copyWith(
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      TextSpan(
+                                        text: 'Already a customer? ',
+                                        style: textTheme.bodyMedium,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
-                          ),
-                        ],
+                            CommonFunctions.blankSpace(height * 0.01, 0),
+                            Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    showCountryPicker(
+                                        context: context,
+                                        onSelect: (val) {
+                                          currentCountryCode =
+                                              '+${val.phoneCode}';
+                                        });
+                                  },
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: height * 0.06,
+                                    width: width * 0.23,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: grey,
+                                      ),
+                                      color: greyShade2,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Text(
+                                      currentCountryCode,
+                                      style: textTheme.displaySmall!.copyWith(
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
