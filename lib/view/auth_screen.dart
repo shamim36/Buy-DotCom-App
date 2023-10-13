@@ -248,8 +248,67 @@ class _AuthScreenState extends State<AuthScreen> {
                       ),
                     ),
                     CommonFunctions.blankSpace(height * 0.02, 0),
+                    Container(
+                      padding: EdgeInsets.only(
+                        left: width * 0.03,
+                        right: width * 0.03,
+                      ),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                                text: 'By Continuing you agee to Amazon\'s',
+                                style: textTheme.labelMedium!),
+                            TextSpan(
+                              text: ' Conditions of use',
+                              style:
+                                  textTheme.labelMedium!.copyWith(color: blue),
+                            ),
+                            TextSpan(
+                                text: ' and ', style: textTheme.labelMedium!),
+                            TextSpan(
+                              text: 'Privacy Notice.',
+                              style:
+                                  textTheme.labelMedium!.copyWith(color: blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
+              ),
+              CommonFunctions.blankSpace(height * 0.05, 0),
+              Column(
+                children: [
+                  Container(
+                    height: 1,
+                    width: width,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [white, grey, white],
+                      ),
+                    ),
+                  ),
+                  CommonFunctions.blankSpace(height * 0.025, 0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Condition of Use',
+                        style: textTheme.bodyMedium!.copyWith(color: blue),
+                      ),
+                      Text(
+                        'Privacy',
+                        style: textTheme.bodyMedium!.copyWith(color: blue),
+                      ),
+                      Text(
+                        'Help',
+                        style: textTheme.bodyMedium!.copyWith(color: blue),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ],
           ),
