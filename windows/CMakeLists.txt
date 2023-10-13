@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(buy_dotcom_app LANGUAGES CXX)
+project(mission_phyche_asteroid LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "buy_dotcom_app")
+set(BINARY_NAME "mission_phyche_asteroid")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

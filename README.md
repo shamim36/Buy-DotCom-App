@@ -1,18 +1,5 @@
-# buy_dotcom_app
+# Crafting Psyche
+Crafting Psyche is an collision avoidance game created by Team Space Psycho for the [NASA Space Apps Challenge 2023](https://www.spaceappschallenge.org/). This game is built using the Flutter and Flame engine and is designed to challenge your skills while taking you on an interstellar adventure. 
+[app-debug.apk](build%2Fapp%2Foutputs%2Fflutter-apk%2Fapp-debug.apk)
 
-A new E-Commerce-App
 
-## Getting Started
-![img.png](img.png)
-![img_1.png](img_1.png)
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

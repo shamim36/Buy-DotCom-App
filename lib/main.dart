@@ -1,22 +1,30 @@
-import 'package:buy_dotcom_app/utils/theme.dart';
-import 'package:buy_dotcom_app/view/auth_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:mission_phyche_asteroid/pages/splash.dart';
+import 'package:mission_phyche_asteroid/utils/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp(const Amazon());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(const MyApp());
 }
 
-class Amazon extends StatelessWidget {
-  const Amazon({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  // This widget is the root of your application.
+  Future<void> _loadProgress() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    progress =
+        _prefs.getStringList('progress') ?? ['true', 'false', 'false', 'false', 'false'];
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Amazon',
+    _loadProgress();
+
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: theme,
-      home: AuthScreen(),
+      home: Splash(),
     );
   }
 }

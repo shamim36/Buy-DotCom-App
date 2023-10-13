@@ -1,5 +1,5 @@
-name: buy_dotcom_app
-description: "A new E-Commerce-App"
+name: mission_phyche_asteroid
+description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0-134.0.dev <4.0.0'
+  sdk: '>=3.1.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,7 +35,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  country_picker: ^2.0.21
+  flame: ^1.8.2
+  flutter_animate: ^4.2.0+1
+  flutter_timer_countdown: ^1.0.5
+  shared_preferences: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -60,10 +63,12 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-
   assets:
     - assets/images/
-
+    - assets/images/phyche/
+    - assets/images/asteroids/
+    - assets/images/junks/
+    - assets/images/spaceship/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -77,10 +82,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Arbutus
+      fonts:
+        - asset: assets/fonts/Arbutus-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

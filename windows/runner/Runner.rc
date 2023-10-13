@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.buy_dotcom_app" "\0"
-            VALUE "FileDescription", "buy_dotcom_app" "\0"
+            VALUE "CompanyName", "com.example" "\0"
+            VALUE "FileDescription", "mission_phyche_asteroid" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "buy_dotcom_app" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.buy_dotcom_app. All rights reserved." "\0"
-            VALUE "OriginalFilename", "buy_dotcom_app.exe" "\0"
-            VALUE "ProductName", "buy_dotcom_app" "\0"
+            VALUE "InternalName", "mission_phyche_asteroid" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "mission_phyche_asteroid.exe" "\0"
+            VALUE "ProductName", "mission_phyche_asteroid" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,11 +1,11 @@
 {
-    "name": "buy_dotcom_app",
-    "short_name": "buy_dotcom_app",
+    "name": "mission_phyche_asteroid",
+    "short_name": "mission_phyche_asteroid",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new E-Commerce-App",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
